@@ -28,7 +28,7 @@ const Navigation = () => {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {['Projects', 'Skills', 'About'].map((item) => (
+          {['Projects', 'Experience', 'About'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
