@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
-import heroProject from '@/assets/hero-project.jpg';
 import { Linkedin, Github, Instagram, Code2 } from 'lucide-react';
 
 const socialLinks = [
@@ -78,37 +77,9 @@ const HeroSection = () => {
           })}
         </div>
 
-        {/* Featured Project Card */}
-        <div 
-          className={`absolute top-28 right-6 md:right-12 lg:right-24 w-[45vw] max-w-md transition-all duration-1000 delay-500 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="relative group cursor-pointer">
-            <div className="overflow-hidden">
-              <img 
-                src={heroProject}
-                alt="Featured project showcase"
-                className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-            </div>
-            
-            {/* Floating overlay card */}
-            <div className="absolute bottom-8 left-4 right-4 bg-card/95 backdrop-blur-sm p-4 transform transition-all duration-500 group-hover:translate-y-[-4px]">
-              <p className="text-xs text-muted-foreground mb-1 font-mono">LATEST PROJECT</p>
-              <h3 className="text-lg font-semibold text-card-foreground leading-tight">
-                Building Digital Experiences
-              </h3>
-              <div className="mt-3 px-3 py-2 bg-accent text-accent-foreground text-xs font-medium inline-block">
-                View Work →
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* CTA Box */}
         <div 
-          className={`absolute top-20 right-6 md:right-12 lg:right-24 max-w-xs transition-all duration-1000 delay-700 ease-out ${
+          className={`absolute top-28 right-6 md:right-12 lg:right-24 max-w-xs transition-all duration-1000 delay-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           }`}
         >
