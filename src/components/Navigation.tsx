@@ -22,16 +22,16 @@ const Navigation = () => {
       <div className="flex items-center gap-12">
         <a href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 border-2 border-foreground rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-180">
-            <span className="text-xs font-bold">S</span>
+            <span className="text-xs font-bold">SC</span>
           </div>
-          <span className="font-medium text-sm tracking-wide">Studio/Name™</span>
+          <span className="font-medium text-sm tracking-wide">Smarak.dev</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {['What we do', 'Our work', 'About us'].map((item) => (
+          {['Projects', 'Skills', 'About'].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase().replace(/\s/g, '-')}`}
+              href={`#${item.toLowerCase()}`}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
             >
               {item}
@@ -45,7 +45,7 @@ const Navigation = () => {
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
           <span className="font-mono">{formatTime(time)}</span>
         </div>
-        <span className="text-sm">New York</span>
+        <span className="text-sm">Available for work</span>
       </div>
     </nav>
   );

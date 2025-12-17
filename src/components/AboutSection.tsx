@@ -1,6 +1,11 @@
 import { useRef, useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
 
+const skills = [
+  'React', 'TypeScript', 'Node.js', 'Python', 'Next.js', 'PostgreSQL', 
+  'MongoDB', 'AWS', 'Docker', 'GraphQL', 'Tailwind CSS', 'Git'
+];
+
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +30,7 @@ const AboutSection = () => {
   return (
     <section 
       ref={sectionRef}
-      id="about-us" 
+      id="about" 
       className="min-h-screen px-6 py-24 relative overflow-hidden"
     >
       {/* Interactive background */}
@@ -41,7 +46,7 @@ const AboutSection = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              We craft digital experiences that matter
+              Turning ideas into reality through code
             </h2>
           </div>
 
@@ -51,9 +56,10 @@ const AboutSection = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Our studio brings together strategists, designers, and technologists 
-              to create impactful digital solutions. We believe in the power of 
-              thoughtful design to transform businesses and connect with audiences.
+              Hi, I'm Smarak — a full-stack developer passionate about building 
+              scalable applications and crafting intuitive user experiences. 
+              I thrive on solving complex problems and transforming concepts 
+              into polished, production-ready products.
             </p>
 
             <div 
@@ -62,16 +68,36 @@ const AboutSection = () => {
               }`}
             >
               <div>
-                <p className="text-4xl font-bold text-primary">50+</p>
-                <p className="text-sm text-muted-foreground mt-1">Projects</p>
+                <p className="text-4xl font-bold text-primary">4+</p>
+                <p className="text-sm text-muted-foreground mt-1">Years Coding</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-primary">12</p>
-                <p className="text-sm text-muted-foreground mt-1">Team Members</p>
+                <p className="text-4xl font-bold text-primary">20+</p>
+                <p className="text-sm text-muted-foreground mt-1">Projects Built</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-primary">8</p>
-                <p className="text-sm text-muted-foreground mt-1">Years</p>
+                <p className="text-4xl font-bold text-primary">10+</p>
+                <p className="text-sm text-muted-foreground mt-1">Technologies</p>
+              </div>
+            </div>
+
+            {/* Skills */}
+            <div 
+              id="skills"
+              className={`pt-8 transition-all duration-1000 delay-500 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <h3 className="text-sm font-semibold mb-4">Tech Stack</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span 
+                    key={skill}
+                    className="px-3 py-1 text-xs font-mono border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors duration-300 cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -88,7 +114,7 @@ const AboutSection = () => {
                   ↗
                 </span>
                 <span className="text-lg font-medium relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-foreground after:transition-all after:duration-300 group-hover:after:w-full">
-                  Start a project
+                  Let's collaborate
                 </span>
               </a>
             </div>

@@ -1,17 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
 import heroProject from '@/assets/hero-project.jpg';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-screen relative overflow-hidden pt-24 px-6">
+    <section className="min-h-screen relative overflow-hidden pt-24 px-6">
       {/* Interactive background */}
       <div className="absolute inset-0 pointer-events-none">
         <InteractiveBlob className="pointer-events-auto" />
@@ -25,25 +24,25 @@ const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
-          A Strategic Design and Technology Agency
+          Full-Stack Developer & Creative Technologist
         </p>
 
         {/* Main Typography */}
         <div className="mt-12 md:mt-20">
-          <h1 className="text-[15vw] md:text-[18vw] font-bold leading-[0.85] tracking-tight text-primary">
+          <h1 className="text-[12vw] md:text-[14vw] font-bold leading-[0.85] tracking-tight text-primary">
             <span 
               className={`block transition-all duration-1000 delay-200 ease-out ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
               }`}
             >
-              NEW
+              SMARAK
             </span>
             <span 
               className={`block transition-all duration-1000 delay-400 ease-out ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
               }`}
             >
-              WORK
+              CHOUDHURY
             </span>
           </h1>
         </div>
@@ -58,19 +57,19 @@ const HeroSection = () => {
             <div className="overflow-hidden">
               <img 
                 src={heroProject}
-                alt="Featured project - Fashion editorial"
+                alt="Featured project showcase"
                 className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
             
             {/* Floating overlay card */}
             <div className="absolute bottom-8 left-4 right-4 bg-card/95 backdrop-blur-sm p-4 transform transition-all duration-500 group-hover:translate-y-[-4px]">
-              <p className="text-xs text-muted-foreground mb-1 font-mono">FINTEK</p>
+              <p className="text-xs text-muted-foreground mb-1 font-mono">LATEST PROJECT</p>
               <h3 className="text-lg font-semibold text-card-foreground leading-tight">
-                FROM VISION TO GLOBAL IMPACT
+                Building Digital Experiences
               </h3>
               <div className="mt-3 px-3 py-2 bg-accent text-accent-foreground text-xs font-medium inline-block">
-                View Project →
+                View Work →
               </div>
             </div>
           </div>
@@ -84,7 +83,7 @@ const HeroSection = () => {
         >
           <div className="p-4 border border-border bg-card/50 backdrop-blur-sm">
             <p className="text-sm text-foreground leading-relaxed mb-3">
-              Tell us about your project. Let's collaborate and make real results.
+              Passionate about crafting elegant solutions. Let's build something amazing together.
             </p>
             <a 
               href="#contact" 
@@ -94,7 +93,7 @@ const HeroSection = () => {
                 ↗
               </span>
               <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-foreground after:transition-all after:duration-300 group-hover:after:w-full">
-                Send us your thoughts
+                Get in touch
               </span>
             </a>
           </div>

@@ -6,33 +6,40 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 border-2 border-foreground rounded-full flex items-center justify-center">
-                <span className="text-xs font-bold">S</span>
+                <span className="text-xs font-bold">SC</span>
               </div>
-              <span className="font-medium text-sm tracking-wide">Studio/Name™</span>
+              <span className="font-medium text-sm tracking-wide">Smarak Choudhury</span>
             </div>
             <p className="text-muted-foreground max-w-xs">
-              Creating digital experiences that connect brands with their audiences.
+              Full-stack developer crafting digital experiences with modern technologies.
             </p>
           </div>
 
           <div>
             <h4 className="text-sm font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>hello@studio.com</p>
-              <p>+1 (555) 123-4567</p>
+              <a href="mailto:hello@smarak.dev" className="block hover:text-foreground transition-colors">
+                hello@smarak.dev
+              </a>
+              <p>Open to opportunities</p>
             </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-4">Social</h4>
+            <h4 className="text-sm font-semibold mb-4">Connect</h4>
             <div className="space-y-2 text-sm">
-              {['Instagram', 'Twitter', 'LinkedIn', 'Dribbble'].map((social) => (
+              {[
+                { name: 'GitHub', url: '#' },
+                { name: 'LinkedIn', url: '#' },
+                { name: 'Twitter', url: '#' },
+                { name: 'Resume', url: '#' }
+              ].map((link) => (
                 <a 
-                  key={social}
-                  href="#" 
+                  key={link.name}
+                  href={link.url} 
                   className="block text-muted-foreground hover:text-foreground transition-colors duration-300"
                 >
-                  {social}
+                  {link.name}
                 </a>
               ))}
             </div>
@@ -41,12 +48,11 @@ const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Studio/Name. All rights reserved.
+            © {new Date().getFullYear()} Smarak Choudhury. Built with React & Tailwind.
           </p>
-          <div className="flex gap-6 text-xs text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-          </div>
+          <p className="text-xs text-muted-foreground">
+            Currently seeking new opportunities
+          </p>
         </div>
       </div>
     </footer>
