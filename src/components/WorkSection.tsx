@@ -4,15 +4,16 @@ import InteractiveBlob from './InteractiveBlob';
 interface Project {
   id: number;
   title: string;
-  category: string;
+  tech: string;
+  description: string;
   year: string;
 }
 
 const projects: Project[] = [
-  { id: 1, title: 'Brand Identity', category: 'Branding', year: '2024' },
-  { id: 2, title: 'Digital Experience', category: 'Web Design', year: '2024' },
-  { id: 3, title: 'Product Launch', category: 'Campaign', year: '2023' },
-  { id: 4, title: 'Visual System', category: 'Identity', year: '2023' },
+  { id: 1, title: 'AI Chat Platform', tech: 'React, Node.js, OpenAI', description: 'Real-time conversational AI interface', year: '2024' },
+  { id: 2, title: 'E-Commerce Dashboard', tech: 'Next.js, TypeScript, Prisma', description: 'Analytics and inventory management', year: '2024' },
+  { id: 3, title: 'Mobile Fitness App', tech: 'React Native, Firebase', description: 'Workout tracking with social features', year: '2023' },
+  { id: 4, title: 'Portfolio Generator', tech: 'Vue.js, Tailwind, Supabase', description: 'Dynamic portfolio builder tool', year: '2023' },
 ];
 
 const WorkSection = () => {
@@ -41,7 +42,7 @@ const WorkSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      id="our-work"
+      id="projects"
       className="min-h-screen px-6 py-24 relative"
     >
       {/* Background interactive element */}
@@ -51,7 +52,7 @@ const WorkSection = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex items-baseline gap-4 mb-16">
-          <h2 className="text-5xl md:text-7xl font-bold text-primary">Selected Work</h2>
+          <h2 className="text-5xl md:text-7xl font-bold text-primary">Featured Projects</h2>
           <span className="text-sm text-muted-foreground font-mono">(04)</span>
         </div>
 
@@ -67,18 +68,26 @@ const WorkSection = () => {
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-8">
-                  <span className="text-sm text-muted-foreground font-mono w-8">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="flex items-start md:items-center gap-4 md:gap-8 flex-1">
+                  <span className="text-sm text-muted-foreground font-mono w-8 pt-1 md:pt-0">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="text-2xl md:text-4xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-4xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1 md:hidden">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-8">
-                  <span className="text-sm text-muted-foreground hidden md:block">
-                    {project.category}
+                <div className="flex items-center gap-4 md:gap-8 ml-12 md:ml-0">
+                  <span className="text-xs text-muted-foreground hidden md:block max-w-[200px]">
+                    {project.description}
+                  </span>
+                  <span className="text-xs text-accent font-mono bg-accent/10 px-2 py-1">
+                    {project.tech}
                   </span>
                   <span className="text-sm text-muted-foreground font-mono">
                     {project.year}
