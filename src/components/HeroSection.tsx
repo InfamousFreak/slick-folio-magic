@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
 import heroProject from '@/assets/hero-project.jpg';
+import { Linkedin, Github, Instagram, Code2 } from 'lucide-react';
+
+const socialLinks = [
+  { name: 'LinkedIn', icon: Linkedin, url: '#' },
+  { name: 'GitHub', icon: Github, url: '#' },
+  { name: 'Instagram', icon: Instagram, url: '#' },
+  { name: 'LeetCode', icon: Code2, url: '#' },
+];
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,6 +53,29 @@ const HeroSection = () => {
               CHOUDHURY
             </span>
           </h1>
+        </div>
+
+        {/* Social Buttons */}
+        <div 
+          className={`flex flex-wrap gap-3 mt-12 transition-all duration-1000 delay-500 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          {socialLinks.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.name}
+                href={social.url}
+                className="flex items-center gap-2 px-4 py-2.5 border border-border bg-card/50 backdrop-blur-sm hover:bg-accent hover:border-accent transition-all duration-300 group"
+              >
+                <Icon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground transition-colors" />
+                <span className="text-sm text-foreground group-hover:text-accent-foreground transition-colors">
+                  {social.name}
+                </span>
+              </a>
+            );
+          })}
         </div>
 
         {/* Featured Project Card */}

@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
+import { Github } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -92,8 +93,9 @@ const WorkSection = () => {
                   <span className="text-sm text-muted-foreground font-mono">
                     {project.year}
                   </span>
-                  <span className="w-10 h-10 border border-border flex items-center justify-center group-hover:bg-foreground group-hover:text-primary-foreground transition-all duration-300">
-                    ↗
+                  <span className="flex items-center gap-2 px-3 py-2 border border-border bg-card/50 group-hover:bg-foreground group-hover:text-primary-foreground transition-all duration-300">
+                    <Github className="w-4 h-4" />
+                    <span className="text-xs font-mono hidden md:inline">View Source</span>
                   </span>
                 </div>
               </div>

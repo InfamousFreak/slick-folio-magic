@@ -1,9 +1,23 @@
 import { useRef, useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
+import { Zap, Heart, BookOpen, GraduationCap } from 'lucide-react';
 
-const skills = [
-  'React', 'TypeScript', 'Node.js', 'Python', 'Next.js', 'PostgreSQL', 
-  'MongoDB', 'AWS', 'Docker', 'GraphQL', 'Tailwind CSS', 'Git'
+const highlights = [
+  {
+    icon: Zap,
+    title: 'Innovation Focus',
+    description: 'Building cutting-edge AI agents and automation tools that streamline complex workflows and enhance user experiences.'
+  },
+  {
+    icon: Heart,
+    title: 'Passion Projects',
+    description: 'From geospatial analysis tools to voice AI systems, I love tackling diverse challenges that push the boundaries of technology.'
+  },
+  {
+    icon: BookOpen,
+    title: 'Continuous Learning',
+    description: 'Always exploring new technologies and methodologies to stay at the forefront of AI/ML and software development.'
+  }
 ];
 
 const AboutSection = () => {
@@ -39,85 +53,91 @@ const AboutSection = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 
+            className={`text-5xl md:text-7xl font-bold text-primary mb-4 transition-all duration-1000 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            About Me
+          </h2>
+          <p 
+            className={`text-muted-foreground transition-all duration-1000 delay-100 ease-out ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            Driven by curiosity and powered by code
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-16 items-start">
-          <div>
-            <h2 
-              className={`text-5xl md:text-7xl font-bold text-primary leading-tight transition-all duration-1000 ease-out ${
+          {/* Left Column - Bio */}
+          <div className="space-y-6">
+            <h3 
+              className={`text-2xl md:text-3xl font-bold text-foreground leading-tight transition-all duration-1000 delay-200 ease-out ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Turning ideas into reality through code
-            </h2>
+              One word which drives me - "Curiosity"
+            </h3>
+            
+            <div 
+              className={`space-y-4 text-muted-foreground leading-relaxed transition-all duration-1000 delay-300 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <p>
+                I'm an aspiring software engineer currently pursuing academics in AI and 
+                Robotics at IIT Mandi. With a strong foundation in full-stack development and 
+                applied machine learning, I thrive on building real-world applications that make a 
+                difference.
+              </p>
+              <p>
+                From voice bots to AI agents, I enjoy creating intelligent solutions that solve 
+                complex problems. My passion for automation drives me to build systems that 
+                not only work efficiently but also continuously improve themselves.
+              </p>
+            </div>
+
+            <div 
+              className={`flex items-center gap-2 text-sm text-muted-foreground pt-4 transition-all duration-1000 delay-400 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <GraduationCap className="w-4 h-4 text-primary" />
+              <span>IIT Mandi</span>
+              <span className="text-border">•</span>
+              <span>AI & Robotics</span>
+            </div>
           </div>
 
-          <div className="space-y-8">
-            <p 
-              className={`text-lg text-muted-foreground leading-relaxed transition-all duration-1000 delay-200 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              Hi, I'm Smarak — a full-stack developer passionate about building 
-              scalable applications and crafting intuitive user experiences. 
-              I thrive on solving complex problems and transforming concepts 
-              into polished, production-ready products.
-            </p>
-
-            <div 
-              className={`grid grid-cols-3 gap-8 pt-8 border-t border-border transition-all duration-1000 delay-400 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <div>
-                <p className="text-4xl font-bold text-primary">4+</p>
-                <p className="text-sm text-muted-foreground mt-1">Years Coding</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-primary">20+</p>
-                <p className="text-sm text-muted-foreground mt-1">Projects Built</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-primary">10+</p>
-                <p className="text-sm text-muted-foreground mt-1">Technologies</p>
-              </div>
-            </div>
-
-            {/* Skills */}
-            <div 
-              id="skills"
-              className={`pt-8 transition-all duration-1000 delay-500 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <h3 className="text-sm font-semibold mb-4">Tech Stack</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span 
-                    key={skill}
-                    className="px-3 py-1 text-xs font-mono border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors duration-300 cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div 
-              className={`pt-8 transition-all duration-1000 delay-600 ease-out ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <a 
-                href="#contact"
-                className="inline-flex items-center gap-3 text-foreground group"
-              >
-                <span className="w-12 h-12 border-2 border-foreground flex items-center justify-center group-hover:bg-foreground group-hover:text-primary-foreground transition-all duration-300">
-                  ↗
-                </span>
-                <span className="text-lg font-medium relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-foreground after:transition-all after:duration-300 group-hover:after:w-full">
-                  Let's collaborate
-                </span>
-              </a>
-            </div>
+          {/* Right Column - Highlight Cards */}
+          <div className="space-y-4">
+            {highlights.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className={`p-6 border border-border bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-500 ${
+                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                  }`}
+                  style={{ transitionDelay: `${300 + index * 100}ms` }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 border border-primary/30 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
