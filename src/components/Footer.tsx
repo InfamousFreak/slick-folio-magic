@@ -18,8 +18,8 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <a href="mailto:hello@smarak.dev" className="block hover:text-foreground transition-colors">
-                hello@smarak.dev
+              <a href="mailto:smkchoudhury@yahoo.com" className="block hover:text-foreground transition-colors">
+                smkchoudhury@yahoo.com
               </a>
               <p>Open to opportunities</p>
             </div>
