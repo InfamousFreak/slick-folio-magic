@@ -85,10 +85,10 @@ const HeroSection = () => {
         >
           <div className="p-4 border border-border bg-card/50 backdrop-blur-sm">
             <p className="text-sm text-foreground leading-relaxed mb-3">
-              Passionate about crafting elegant solutions. Let's build something amazing together.
+              Actively looking for summer internships. Let's connect and build something amazing together.
             </p>
             <a 
-              href="#contact" 
+              href="mailto:smkchoudhury@yahoo.com" 
               className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors group"
             >
               <span className="w-6 h-6 border border-foreground flex items-center justify-center group-hover:bg-foreground group-hover:text-primary-foreground transition-all duration-300">
