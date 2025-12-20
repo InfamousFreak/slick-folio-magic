@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
-import { Linkedin, Github, Instagram, Code2 } from 'lucide-react';
+import { Linkedin, Github, Instagram, Code2, FileCode2 } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react'; 
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: Linkedin, url: '#' },
-  { name: 'GitHub', icon: Github, url: '#' },
-  { name: 'Instagram', icon: Instagram, url: '#' },
-  { name: 'LeetCode', icon: Code2, url: '#' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/smarak-choudhury-423b39280/' },
+  { name: 'GitHub', icon: Github, url: 'https://github.com/InfamousFreak' },
+  { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/akasmarak14/' },
+  { name: 'LeetCode', icon: Code2, url: 'https://leetcode.com/u/csmarak141/' },
+  { name: 'Resume', icon: FileCode2, url: ' https://drive.google.com/file/d/1_8dlHa1aPL7a0cz3HVdtM5N-WamRW1E5/view?usp=sharing' },
 ];
 
 const HeroSection = () => {
@@ -36,7 +38,7 @@ const HeroSection = () => {
 
         {/* Main Typography */}
         <div className="mt-12 md:mt-20">
-          <h1 className="text-[12vw] md:text-[14vw] font-bold leading-[0.85] tracking-tight text-primary">
+          <h1 className="text-[10vw] md:text-[10vw] font-bold leading-[0.85] tracking-tight text-primary">
             <span 
               className={`block transition-all duration-1000 delay-200 ease-out ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
@@ -66,6 +68,8 @@ const HeroSection = () => {
               <a
                 key={social.name}
                 href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2.5 border border-border bg-card/50 backdrop-blur-sm hover:bg-accent hover:border-accent transition-all duration-300 group"
               >
                 <Icon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground transition-colors" />

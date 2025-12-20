@@ -29,10 +29,10 @@ const Footer = () => {
             <h4 className="text-sm font-semibold mb-4">Connect</h4>
             <div className="space-y-2 text-sm">
               {[
-                { name: 'GitHub', url: '#' },
-                { name: 'LinkedIn', url: '#' },
+                { name: 'GitHub', url: 'https://github.com/InfamousFreak/' },
+                { name: 'LinkedIn', url: 'https://www.linkedin.com/in/smarak-choudhury-423b39280/' },
                 { name: 'Twitter', url: '#' },
-                { name: 'Resume', url: '#' }
+                { name: 'Resume', url: 'https://drive.google.com/file/d/1_8dlHa1aPL7a0cz3HVdtM5N-WamRW1E5/view?usp=sharing'}
               ].map((link) => (
                 <a 
                   key={link.name}

@@ -12,29 +12,48 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: 'HyperQube Ionic',
-    role: 'SDE Intern',
-    location: 'Remote',
-    period: 'June 2025 - July 2025',
+    company: 'LogicBoots',
+    role: 'Application Development Intern',
+    location: 'India',
+    period: '2025',
     achievements: [
-      'Architected a scalable analytics system with Amplitude and Clerk integration, engineered to capture live user events across various org segments and drive insights from 5K+ monthly actions.',
-      'Built a native meeting feature directly into the platform using Nylas and Twilio APIs, reducing manual scheduling time by 30% and increasing user retention by 50%.'
+      'Built a full-stack geospatial tracking application with Flutter and Supabase, featuring secure authentication, role-based access, and dynamic map rendering.',
+      'Integrated PostGIS for efficient GeoJSON storage and real-time visualization on Google Maps.',
+      'Engineered an offline-capable GPS tracking system for field staff with real-time proximity calculations.',
+      'Migrated heavy computations such as nearest-point analysis to server-side PostgreSQL RPCs, improving scalability and reducing latency.'
     ],
-    technologies: ['Data/Business Analytics', 'Amplitude Integration', 'Event Tracking', 'REST APIs', 'Twilio API', 'Nylas Calendar API']
+    technologies: [
+      'Flutter',
+      'Supabase',
+      'PostgreSQL',
+      'PostGIS',
+      'Google Maps API'
+    ]
   },
   {
-    company: 'VectorX DB (prev. LaunchX Labs)',
-    role: 'SDE Intern',
-    location: 'Bengaluru, Karnataka',
-    period: 'Dec. 2024 - Jan. 2025',
+    company: 'LogicBoots',
+    role: 'AI Development Intern',
+    location: 'India',
+    period: '2025',
     achievements: [
-      'Designed AI agents (LLM Agent & RAG Agent) with PGVectorStore and GPT-4o-mini, reducing response time by 50% and improving retrieval accuracy',
-      'Built a metadata extraction pipeline with LangChain\'s LLM, automating document processing for 1M+ documents monthly',
-      'Developed a dynamic filter system with FilterAgent and Claude 3.5 Sonnet, generating 100K+ JSON filters daily and boosting DB query efficiency by 40%'
+      'Developed a Retrieval-Augmented Generation (RAG) system with a FastAPI backend and Next.js frontend, supporting persistent chat history.',
+      'Implemented FAISS-based vector search with MongoDB Atlas for hybrid semantic retrieval, achieving sub-second query performance.',
+      'Automated pipelines for PDF and DOCX ingestion, embedding generation, and persistent vector storage using Sentence Transformers.',
+      'Containerized services with Docker and resolved deployment issues including SSL/TLS, CORS, and dependency conflicts.',
+      'Deployed the system on cloud platforms with CI/CD pipelines enabling zero-downtime updates.'
     ],
-    technologies: ['Python', 'LangChain', 'GPT-4o-mini', 'Claude 3.5 Sonnet', 'PGVectorStore', 'AI Agents', 'RAG']
+    technologies: [
+      'Python',
+      'FastAPI',
+      'Next.js',
+      'FAISS',
+      'MongoDB Atlas',
+      'Sentence Transformers',
+      'Docker'
+    ]
   }
 ];
+
 
 const ExperienceSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -78,25 +97,23 @@ const ExperienceSection = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="experience" 
+      id="experience"
       className="min-h-screen px-6 py-24 relative"
     >
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 
-            className={`text-5xl md:text-7xl font-bold text-primary mb-4 transition-all duration-1000 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+          <h2
+            className={`text-5xl md:text-7xl font-bold text-primary mb-4 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             Experience
           </h2>
-          <p 
-            className={`text-muted-foreground transition-all duration-1000 delay-100 ease-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+          <p
+            className={`text-muted-foreground transition-all duration-1000 delay-100 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             Building innovative solutions and driving measurable impact
           </p>
@@ -113,16 +130,15 @@ const ExperienceSection = () => {
               <div
                 key={exp.company}
                 data-index={index}
-                className={`relative pl-8 md:pl-12 transition-all duration-700 ease-out ${
-                  visibleItems.includes(index) 
-                    ? 'opacity-100 translate-x-0' 
+                className={`relative pl-8 md:pl-12 transition-all duration-700 ease-out ${visibleItems.includes(index)
+                    ? 'opacity-100 translate-x-0'
                     : 'opacity-0 -translate-x-8'
-                }`}
+                  }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-4 top-2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-background" />
-                
+
                 {/* Timeline connector */}
                 <div className="absolute left-0 md:left-4 top-2 -translate-x-1/2 w-3 h-3 bg-primary/30 rounded-full animate-ping" />
 
@@ -172,7 +188,7 @@ const ExperienceSection = () => {
                     <h4 className="text-sm font-semibold text-foreground mb-3">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
-                        <span 
+                        <span
                           key={tech}
                           className="px-2.5 py-1 text-xs font-mono border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
                         >

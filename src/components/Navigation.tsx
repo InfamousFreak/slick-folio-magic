@@ -1,7 +1,22 @@
 import { useState, useEffect } from 'react';
+import { Sun, Moon } from 'lucide-react';
+
 
 const Navigation = () => {
   const [time, setTime] = useState(new Date());
+
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    setIsDark(isDarkMode);
+  }, []);
+
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle('dark');
+    setIsDark(prev => !prev);
+  };
+
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -46,6 +61,18 @@ const Navigation = () => {
           <span className="font-mono">{formatTime(time)}</span>
         </div>
         <span className="text-sm">Available for work</span>
+        <button
+          onClick={toggleDarkMode}
+          className="p-2 border border-border bg-card hover:bg-accent transition-colors"
+          aria-label="Toggle dark mode"
+        >
+          {isDark ? (
+            <Sun className="w-4 h-4 text-foreground" />
+          ) : (
+            <Moon className="w-4 h-4 text-foreground" />
+          )}
+        </button>
+
       </div>
     </nav>
   );

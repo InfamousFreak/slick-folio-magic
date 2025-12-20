@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import InteractiveBlob from './InteractiveBlob';
-import { Github } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
+
 
 interface Project {
   id: number;
@@ -8,14 +9,58 @@ interface Project {
   tech: string;
   description: string;
   year: string;
+  sourceUrl?: string;
+  liveUrl?: string;
 }
 
 const projects: Project[] = [
-  { id: 1, title: 'AI Chat Platform', tech: 'React, Node.js, OpenAI', description: 'Real-time conversational AI interface', year: '2024' },
-  { id: 2, title: 'E-Commerce Dashboard', tech: 'Next.js, TypeScript, Prisma', description: 'Analytics and inventory management', year: '2024' },
-  { id: 3, title: 'Mobile Fitness App', tech: 'React Native, Firebase', description: 'Workout tracking with social features', year: '2023' },
-  { id: 4, title: 'Portfolio Generator', tech: 'Vue.js, Tailwind, Supabase', description: 'Dynamic portfolio builder tool', year: '2023' },
+  {
+    id: 1,
+    title: 'AI-Powered ICU Monitoring System',
+    tech: 'FastAPI, WebSockets, scikit-learn, Docker',
+    description: 'Real-time patient vitals streaming with AI-based sepsis risk scoring',
+    year: '2025',
+    sourceUrl: 'https://github.com/InfamousFreak/icuserver',
+    liveUrl: 'https://icu-control.vercel.app/',
+  },
+  {
+    id: 2,
+    title: 'RAG-Based AI Chat System',
+    tech: 'FastAPI, Next.js, FAISS, MongoDB, Docker',
+    description: 'Retrieval-augmented generation system with semantic search and persistent chat',
+    year: '2025',
+    sourceUrl: 'https://github.com/InfamousFreak/GPT-railways',
+    liveUrl: 'https://ai-chatbot-lime-one.vercel.app/',
+  },
+  {
+    id: 3,
+    title: 'Geospatial Field Tracking App',
+    tech: 'Flutter, Supabase, PostgreSQL/PostGIS',
+    description: 'Offline-capable GPS tracking with role-based access and proximity analysis',
+    year: '2025',
+    sourceUrl: 'https://github.com/InfamousFreak/Rail_App',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.nerailways.cablerouteplan&hl=en_IN',
+  },
+  {
+    id: 4,
+    title: 'SpaceWars – Blockchain NFT Game',
+    tech: 'Solidity, React.js, IPFS, Web3.js',
+    description: 'Decentralized NFT marketplace with tradable in-game assets',
+    year: '2024',
+    sourceUrl: 'https://github.com/InfamousFreak/TDOC-SpaceWars/tree/main',
+    liveUrl: '',
+  },
+  {
+    id: 5,
+    title: 'Foodium – Food Delivery Platform',
+    tech: 'Go Fiber, PostgreSQL, JWT, Docker',
+    description: 'Backend system for authentication, orders, and real-time cart management',
+    year: '2024',
+    sourceUrl: 'https://github.com/InfamousFreak/Tech-Task-24',
+    liveUrl: 'https://tech-task-24-1.onrender.com',
+  },
 ];
+
 
 const WorkSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -41,8 +86,8 @@ const WorkSection = () => {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       id="projects"
       className="min-h-screen px-6 py-24 relative"
     >
@@ -54,7 +99,7 @@ const WorkSection = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex items-baseline gap-4 mb-16">
           <h2 className="text-5xl md:text-7xl font-bold text-primary">Featured Projects</h2>
-          <span className="text-sm text-muted-foreground font-mono">(04)</span>
+          <span className="text-sm text-muted-foreground font-mono">(05)</span>
         </div>
 
         <div className="space-y-0">
@@ -62,12 +107,11 @@ const WorkSection = () => {
             <div
               key={project.id}
               data-index={index}
-              className={`group border-t border-border py-8 cursor-pointer transition-all duration-700 ease-out ${
-                visibleItems.includes(index) 
-                  ? 'opacity-100 translate-x-0' 
+              className={`group border-t border-border py-8 cursor-pointer transition-all duration-700 ease-out ${visibleItems.includes(index)
+                  ? 'opacity-100 translate-x-0'
                   : 'opacity-0 -translate-x-8'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+                }`}
+              style={{ '--transition-delay': `${index * 100}ms` } as React.CSSProperties}
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-start md:items-center gap-4 md:gap-8 flex-1">
@@ -93,9 +137,31 @@ const WorkSection = () => {
                   <span className="text-sm text-muted-foreground font-mono">
                     {project.year}
                   </span>
-                  <span className="flex items-center gap-2 px-3 py-2 border border-border bg-card/50 group-hover:bg-foreground group-hover:text-primary-foreground transition-all duration-300">
-                    <Github className="w-4 h-4" />
-                    <span className="text-xs font-mono hidden md:inline">View Source</span>
+                  <span>
+                    {project.sourceUrl && (
+                      <a
+                        href={project.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-3 py-2 border border-border bg-card/50 hover:bg-foreground hover:text-primary-foreground transition-all duration-300"
+                      >
+                        <Github className="w-4 h-4" />
+                        <span className="text-xs font-mono hidden md:inline">View Source</span>
+                      </a>
+                    )}
+                  </span>
+                  <span>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-3 py-2 border border-border bg-card/50 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span className="text-xs font-mono hidden md:inline">Live Demo</span>
+                      </a>
+                    )}
                   </span>
                 </div>
               </div>
