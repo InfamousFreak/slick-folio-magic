@@ -5,6 +5,7 @@ import WorkSection from '@/components/WorkSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import AboutSection from '@/components/AboutSection';
 import Footer from '@/components/Footer';
+import Background from '@/components/Background';
 
 const Index = () => {
   useEffect(() => {
@@ -17,7 +18,8 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
+    <main className="min-h-screen bg-transparent overflow-x-hidden">
+      <Background />
       <Navigation />
       <HeroSection />
       <WorkSection />
