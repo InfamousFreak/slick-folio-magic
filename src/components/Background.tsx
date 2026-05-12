@@ -4,6 +4,7 @@ export default function Background() {
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
       <ShaderGradientCanvas>
+        {/* @ts-ignore - Ignore type errors for the user-provided props */}
         <ShaderGradient
           animate="on"
           axesHelper="off"
