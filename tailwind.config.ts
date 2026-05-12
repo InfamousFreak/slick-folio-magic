@@ -87,7 +87,7 @@ export default {
   		},
   		fontFamily: {
   			sans: [
-  				'Space Grotesk',
+  				'Agrandir',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
