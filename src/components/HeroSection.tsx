@@ -20,11 +20,6 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen relative overflow-hidden pt-24 px-6">
-      {/* Interactive background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <InteractiveBlob className="pointer-events-auto" />
-      </div>
-
       {/* Content */}
       <div className="relative z-10">
         {/* Tagline */}
@@ -38,7 +33,7 @@ const HeroSection = () => {
 
         {/* Main Typography */}
         <div className="mt-12 md:mt-20">
-          <h1 className="text-[10vw] md:text-[10vw] font-bold leading-[0.85] tracking-tight text-primary">
+          <h1 className="text-[10vw] md:text-[10vw] font-bold font-sans leading-[0.85] tracking-tight text-primary">
             <span 
               className={`block transition-all duration-1000 delay-200 ease-out ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
