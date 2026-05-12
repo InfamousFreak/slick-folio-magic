@@ -15,13 +15,13 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 1,
-    title: 'AI-Powered ICU Monitoring System',
-    tech: 'FastAPI, WebSockets, scikit-learn, Docker',
-    description: 'Real-time patient vitals streaming with AI-based sepsis risk scoring',
+    id: 4,
+    title: 'Research Monitor : Live ArXiv Intelligence Engine',
+    tech: 'Go, Gemma 4B, Ollama, Nomic Embeddings, Vector Search, Goroutines',
+    description: 'Engineered a concurrent ArXiv ingestion system in Go using goroutines and bounded worker pools to fetch, parse, and score research papers across multiple category targets in parallel.',
     year: '2025',
-    sourceUrl: 'https://github.com/InfamousFreak/icuserver',
-    liveUrl: 'https://icu-control.vercel.app/',
+    sourceUrl: 'https://github.com/InfamousFreak/Research-Monitor',
+    liveUrl: 'https://research-monitor-demo.vercel.app',
   },
   {
     id: 2,
@@ -42,13 +42,13 @@ const projects: Project[] = [
     liveUrl: 'https://play.google.com/store/apps/details?id=com.nerailways.cablerouteplan&hl=en_IN',
   },
   {
-    id: 4,
-    title: 'Research Monitor : Live ArXiv Intelligence Engine',
-    tech: 'Go, Gemma 4B, Ollama, Nomic Embeddings, Vector Search, Goroutines',
-    description: 'Engineered a concurrent ArXiv ingestion system in Go using goroutines and bounded worker pools to fetch, parse, and score research papers across multiple category targets in parallel.',
+    id: 1,
+    title: 'AI-Powered ICU Monitoring System',
+    tech: 'FastAPI, WebSockets, scikit-learn, Docker',
+    description: 'Real-time patient vitals streaming with AI-based sepsis risk scoring',
     year: '2025',
-    sourceUrl: 'https://github.com/InfamousFreak/Research-Monitor',
-    liveUrl: 'https://research-monitor-demo.vercel.app',
+    sourceUrl: 'https://github.com/InfamousFreak/icuserver',
+    liveUrl: 'https://icu-control.vercel.app/',
   },
   {
     id: 5,
@@ -91,10 +91,7 @@ const WorkSection = () => {
       id="projects"
       className="min-h-screen px-6 py-24 relative"
     >
-      {/* Background interactive element */}
-      <div className="absolute right-0 top-1/4 w-1/3 h-1/2 pointer-events-none opacity-50">
-        <InteractiveBlob className="pointer-events-auto" />
-      </div>
+      {/* Background interactive element removed */}
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex items-baseline gap-4 mb-16">
@@ -131,7 +128,7 @@ const WorkSection = () => {
                   <span className="text-xs text-muted-foreground hidden md:block max-w-[200px]">
                     {project.description}
                   </span>
-                  <span className="text-xs text-accent font-mono bg-accent/10 px-2 py-1">
+                  <span className="text-xs text-white font-bold font-mono px-2 py-1">
                     {project.tech}
                   </span>
                   <span className="text-sm text-muted-foreground font-mono">
