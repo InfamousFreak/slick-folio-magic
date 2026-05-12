@@ -48,10 +48,7 @@ const AboutSection = () => {
       id="about"
       className="min-h-screen px-6 py-24 relative overflow-hidden"
     >
-      {/* Interactive background */}
-      <div className="absolute left-0 bottom-0 w-1/2 h-2/3 pointer-events-none">
-        <InteractiveBlob className="pointer-events-auto opacity-60" />
-      </div>
+      {/* Interactive background removed */}
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
