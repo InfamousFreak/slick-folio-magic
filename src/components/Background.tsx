@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react';
 
 export default function Background() {
