@@ -63,7 +63,7 @@ const Navigation = () => {
         <span className="text-sm">Available for work</span>
         <button
           onClick={toggleDarkMode}
-          className="p-2 border border-border bg-card hover:bg-accent transition-colors"
+          className="p-2 border border-border bg-transparent hover:bg-white/10 transition-colors"
           aria-label="Toggle dark mode"
         >
           {isDark ? (
