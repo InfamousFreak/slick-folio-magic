@@ -143,10 +143,10 @@ const ExperienceSection = () => {
                 <div className="absolute left-0 md:left-4 top-2 -translate-x-1/2 w-3 h-3 bg-primary/30 rounded-full animate-ping" />
 
                 {/* Card */}
-                <div className="border-l-2 border-primary/50 bg-card/30 backdrop-blur-sm p-6 hover:border-primary transition-colors duration-300">
+                <div className="border-l-2 border-primary/50 bg-transparent backdrop-blur-sm p-6 hover:border-primary transition-colors duration-300">
                   {/* Header */}
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="w-8 h-8 border border-border bg-card flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 border border-border bg-transparent flex items-center justify-center flex-shrink-0">
                       <Building2 className="w-4 h-4 text-muted-foreground" />
                     </div>
                     <div>
@@ -190,7 +190,7 @@ const ExperienceSection = () => {
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-1 text-xs font-mono border border-border bg-card hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
+                          className="px-2.5 py-1 text-xs font-mono border border-border bg-transparent hover:bg-white/10 hover:text-white transition-colors duration-300"
                         >
                           {tech}
                         </span>

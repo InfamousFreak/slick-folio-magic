@@ -143,7 +143,7 @@ const WorkSection = () => {
                         href={project.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-3 py-2 border border-border bg-card/50 hover:bg-foreground hover:text-primary-foreground transition-all duration-300"
+                        className="flex items-center gap-2 px-3 py-2 border border-border bg-transparent hover:bg-white/10 transition-all duration-300"
                       >
                         <Github className="w-4 h-4" />
                         <span className="text-xs font-mono hidden md:inline">View Source</span>
@@ -156,7 +156,7 @@ const WorkSection = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-3 py-2 border border-border bg-card/50 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                        className="flex items-center gap-2 px-3 py-2 border border-border bg-transparent hover:bg-white/10 transition-all duration-300"
                       >
                         <ExternalLink className="w-4 h-4" />
                         <span className="text-xs font-mono hidden md:inline">Live Demo</span>

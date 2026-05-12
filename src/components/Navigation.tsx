@@ -33,7 +33,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between bg-background/80 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between bg-transparent backdrop-blur-sm">
       <div className="flex items-center gap-12">
         <a href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 border-2 border-foreground rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-180">
@@ -63,7 +63,7 @@ const Navigation = () => {
         <span className="text-sm">Available for work</span>
         <button
           onClick={toggleDarkMode}
-          className="p-2 border border-border bg-card hover:bg-accent transition-colors"
+          className="p-2 border border-border bg-transparent hover:bg-white/10 transition-colors"
           aria-label="Toggle dark mode"
         >
           {isDark ? (

@@ -70,7 +70,7 @@ const HeroSection = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 border border-border bg-card/50 backdrop-blur-sm hover:bg-accent hover:border-accent transition-all duration-300 group"
+                className="flex items-center gap-2 px-4 py-2.5 border border-border bg-transparent backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
               >
                 <Icon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground transition-colors" />
                 <span className="text-sm text-foreground group-hover:text-accent-foreground transition-colors">
@@ -87,7 +87,7 @@ const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           }`}
         >
-          <div className="p-4 border border-border bg-card/50 backdrop-blur-sm">
+          <div className="p-4 border border-border bg-transparent backdrop-blur-sm">
             <p className="text-sm text-foreground leading-relaxed mb-3">
               Actively looking for summer internships. Let's connect and build something amazing together.
             </p>
