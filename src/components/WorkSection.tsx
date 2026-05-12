@@ -43,12 +43,12 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: 'SpaceWars – Blockchain NFT Game',
-    tech: 'Solidity, React.js, IPFS, Web3.js',
-    description: 'Decentralized NFT marketplace with tradable in-game assets',
-    year: '2024',
-    sourceUrl: 'https://github.com/InfamousFreak/TDOC-SpaceWars/tree/main',
-    liveUrl: '',
+    title: 'Research Monitor : Live ArXiv Intelligence Engine',
+    tech: 'Go, Gemma 4B, Ollama, Nomic Embeddings, Vector Search, Goroutines',
+    description: 'Engineered a concurrent ArXiv ingestion system in Go using goroutines and bounded worker pools to fetch, parse, and score research papers across multiple category targets in parallel.',
+    year: '2025',
+    sourceUrl: 'https://github.com/InfamousFreak/Research-Monitor',
+    liveUrl: 'https://research-monitor-demo.vercel.app',
   },
   {
     id: 5,

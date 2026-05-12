@@ -5,6 +5,7 @@ import WorkSection from '@/components/WorkSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import AboutSection from '@/components/AboutSection';
 import Footer from '@/components/Footer';
+import Background from '@/components/Background';
 
 const Index = () => {
   useEffect(() => {
