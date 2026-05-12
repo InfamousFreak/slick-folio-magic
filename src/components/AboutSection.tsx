@@ -116,7 +116,7 @@ const AboutSection = () => {
               return (
                 <div
                   key={item.title}
-                  className={`p-6 border border-border bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                  className={`p-6 border border-border bg-transparent backdrop-blur-sm hover:border-primary/50 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
                     }`}
                   style={{ transitionDelay: `${300 + index * 100}ms` }}
                 >
