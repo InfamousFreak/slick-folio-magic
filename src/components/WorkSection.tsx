@@ -20,8 +20,8 @@ const projects: Project[] = [
     tech: 'Go, Gemma 4B, Ollama, Nomic Embeddings, Vector Search, Goroutines',
     description: 'Engineered a concurrent ArXiv ingestion system in Go using goroutines and bounded worker pools to fetch, parse, and score research papers across multiple category targets in parallel.',
     year: '2025',
-    sourceUrl: 'https://github.com/InfamousFreak/Research-Monitor',
-    liveUrl: 'https://research-monitor-demo.vercel.app',
+    sourceUrl: 'https://github.com/InfamousFreak/resmon',
+    liveUrl: 'https://resmon.vercel.app/',
   },
   {
     id: 2,
