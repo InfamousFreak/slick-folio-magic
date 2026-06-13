@@ -121,7 +121,7 @@ const ExperienceSection = () => {
       id="experience"
       className="min-h-screen px-6 py-24 relative"
     >
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2
@@ -256,14 +256,14 @@ const ExperienceSection = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 md:gap-8 ml-12 md:ml-0">
-                    <span className="text-xs text-muted-foreground hidden md:block max-w-[200px]">
+                  <div className="flex items-center gap-4 md:gap-8 ml-12 md:ml-0 flex-shrink-0">
+                    <span className="text-xs text-muted-foreground hidden md:block max-w-[180px]">
                       {item.company} — {item.description}
                     </span>
-                    <span className="text-xs text-white font-bold font-mono px-2 py-1">
+                    <span className="text-xs text-white font-bold font-mono px-2 py-1 whitespace-nowrap">
                       {item.tech}
                     </span>
-                    <span className="text-sm text-muted-foreground font-mono">
+                    <span className="text-sm text-muted-foreground font-mono whitespace-nowrap">
                       {item.year}
                     </span>
                     {item.url && (
