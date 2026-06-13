@@ -46,11 +46,11 @@ interface WorkItem {
 }
 
 const workItems: WorkItem[] = [
-  { id: 1, role: 'Role Title 01', company: 'Company One', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2025' },
-  { id: 2, role: 'Role Title 02', company: 'Company Two', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2025' },
-  { id: 3, role: 'Role Title 03', company: 'Company Three', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2024' },
-  { id: 4, role: 'Role Title 04', company: 'Company Four', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2024' },
-  { id: 5, role: 'Role Title 05', company: 'Company Five', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2023' },
+  { id: 1, role: 'FullStack/AI Intern', company: 'LogicBoots', description: 'Building AI products in healthcare', tech: 'FastAPI, Next.js, Flutter, Docker, Postgres', year: 'Aug 2025 – Jan 2026' },
+  { id: 2, role: 'Backend Intern', company: 'Remote Physios', description: 'Healthcare systems and video streaming', tech: 'FastAPI, Hugging Face, Go/Pion, WebRTC, Next.js', year: 'May 2026 – July 2026' },
+  { id: 3, role: 'Automation Intern', company: 'Boss Machine Works', description: 'Mechanical automations', tech: '—', year: '—' },
+  { id: 4, role: 'Data Intern', company: 'HimGra DESCATUK', description: 'Silk apparel retail', tech: '—', year: '—' },
+  { id: 5, role: 'Data Tech Intern', company: 'Bintix', description: 'Business insights and research via waste', tech: '—', year: '—' },
 ];
 
 
