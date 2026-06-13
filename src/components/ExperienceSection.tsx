@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { Building2, MapPin, Calendar, TrendingUp } from 'lucide-react';
+import { Building2, MapPin, Calendar, TrendingUp, ExternalLink } from 'lucide-react';
 
 interface Experience {
   company: string;
@@ -11,25 +11,6 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
-  {
-    company: 'LogicBoots',
-    role: 'Application Development Intern',
-    location: 'India',
-    period: '2025',
-    achievements: [
-      'Built a full-stack geospatial tracking application with Flutter and Supabase, featuring secure authentication, role-based access, and dynamic map rendering.',
-      'Integrated PostGIS for efficient GeoJSON storage and real-time visualization on Google Maps.',
-      'Engineered an offline-capable GPS tracking system for field staff with real-time proximity calculations.',
-      'Migrated heavy computations such as nearest-point analysis to server-side PostgreSQL RPCs, improving scalability and reducing latency.'
-    ],
-    technologies: [
-      'Flutter',
-      'Supabase',
-      'PostgreSQL',
-      'PostGIS',
-      'Google Maps API'
-    ]
-  },
   {
     company: 'LogicBoots',
     role: 'AI Development Intern',
@@ -54,11 +35,30 @@ const experiences: Experience[] = [
   }
 ];
 
+interface WorkItem {
+  id: number;
+  role: string;
+  company: string;
+  description: string;
+  tech: string;
+  year: string;
+  url?: string;
+}
+
+const workItems: WorkItem[] = [
+  { id: 1, role: 'Role Title 01', company: 'Company One', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2025' },
+  { id: 2, role: 'Role Title 02', company: 'Company Two', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2025' },
+  { id: 3, role: 'Role Title 03', company: 'Company Three', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2024' },
+  { id: 4, role: 'Role Title 04', company: 'Company Four', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2024' },
+  { id: 5, role: 'Role Title 05', company: 'Company Five', description: 'Short description coming soon', tech: 'Tech, Stack, Here', year: '2023' },
+];
+
 
 const ExperienceSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const [visibleWork, setVisibleWork] = useState<number[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -94,6 +94,25 @@ const ExperienceSection = () => {
     items?.forEach((item) => itemObserver.observe(item));
 
     return () => itemObserver.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const workObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-work-index') || '0');
+            setVisibleWork((prev) => [...new Set([...prev, index])]);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const items = sectionRef.current?.querySelectorAll('[data-work-index]');
+    items?.forEach((item) => workObserver.observe(item));
+
+    return () => workObserver.disconnect();
   }, []);
 
   return (
@@ -196,6 +215,68 @@ const ExperienceSection = () => {
                         </span>
                       ))}
                     </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Work Experience Listing — Featured Projects style */}
+        <div className="mt-24">
+          <div className="flex items-baseline gap-4 mb-12">
+            <h3 className="text-4xl md:text-6xl font-bold text-primary">Work Experience</h3>
+            <span className="text-sm text-muted-foreground font-mono">
+              ({String(workItems.length).padStart(2, '0')})
+            </span>
+          </div>
+
+          <div className="space-y-0">
+            {workItems.map((item, index) => (
+              <div
+                key={item.id}
+                data-work-index={index}
+                className={`group border-t border-border py-8 transition-all duration-700 ease-out ${visibleWork.includes(index)
+                    ? 'opacity-100 translate-x-0'
+                    : 'opacity-0 -translate-x-8'
+                  }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div className="flex items-start md:items-center gap-4 md:gap-8 flex-1">
+                    <span className="text-sm text-muted-foreground font-mono w-8 pt-1 md:pt-0">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div className="flex-1">
+                      <h4 className="text-2xl md:text-4xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                        {item.role}
+                      </h4>
+                      <p className="text-sm text-muted-foreground mt-1 md:hidden">
+                        {item.company} — {item.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 md:gap-8 ml-12 md:ml-0">
+                    <span className="text-xs text-muted-foreground hidden md:block max-w-[200px]">
+                      {item.company} — {item.description}
+                    </span>
+                    <span className="text-xs text-white font-bold font-mono px-2 py-1">
+                      {item.tech}
+                    </span>
+                    <span className="text-sm text-muted-foreground font-mono">
+                      {item.year}
+                    </span>
+                    {item.url && (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-3 py-2 border border-border bg-transparent hover:bg-white/10 transition-all duration-300"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span className="text-xs font-mono hidden md:inline">Visit</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
